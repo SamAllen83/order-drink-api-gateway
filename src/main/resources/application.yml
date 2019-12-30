@@ -1,7 +1,22 @@
 spring:
-  profiles:
-    active: @spring.profiles.active@
-  webflux:
-    static-locations: "classpath:/static/"
+  application:
+    name: Order Drink API Gateway
+logging:
+  level:
+    root: INFO
+management:
+  endpoints:
+    enabled-by-default: true
+graph:
+  ql:
+    resource: graphql
+bartender:
+  api:
+    base:
+      #Environment override required
+      uri:
+    graph:
+      ql:
+        url: ${bartender.api.base.uri}${graph.ql.resource}
 server:
-  port: 3002
+  port: 8082
