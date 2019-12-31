@@ -1,0 +1,7 @@
+mutation orderDrink($customerName: String!, $drinkName: String!) {
+    orderDrink(customerName: $customerName, drinkName: $drinkName) {
+        customerName
+        drinkName
+        orderId
+    }
+}
